@@ -6,7 +6,8 @@
 */
 int main(void)
 
-{ long n, i; /*Declaring statements*/
+{
+	long n, i; /*Declaring statements*/
 
 	n = 612852475143;
 	for (i = 2; i < n; i++) /*Start FOR*/
