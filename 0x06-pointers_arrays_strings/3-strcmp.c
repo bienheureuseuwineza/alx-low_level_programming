@@ -1,25 +1,19 @@
-#include"main.h"
+#include "main.h"
 /**
-*_strncpy -  copies a string
-*@dest: A pointer to an char that will be updated
-*@src: A pointer to an char that will be updated
-*@n: value
+*_strcmp -  compares two strings
+*@s1: A pointer to an char that will be updated
+*@s2: A pointer to an char that will be updated
 *Return: dest
 */
-char *_strncpy(char *dest, char *src, int n)
+int _strcmp(char *s1, char *s2)
 {
-	int i;
-
-	i = 0;
-	while (i < n && src[i] != '\0')
+	char *str_one = s1; /*Declaring pointer*/
+	char *str_two = s2;
+	/*WHILE*/
+	while (*str_one != '\0' && *str_two != '\0' &&  *str_one == *str_two)
 	{
-		dest[i] = src[i];
-		i++;
+		str_one++; /*Add string one and string two*/
+		str_two++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	return (*str_one - *str_two);
 }
