@@ -1,13 +1,30 @@
-#include "main.h"
+#include <stdio.h>
+#include "function_pointers.h"
 /**
- *_strlen_recursion - length of a string
- *@s: pointer block of memory to fill
- *Return: strlen_recursion
- */
-int _strlen_recursion(char *s)
+ * int_index - searches for an integer.
+ *@array: array
+ *@size: size of the array
+ *@cmp:callback function
+ * Return: no element matches -1
+ **/
+int int_index(int *array, int size, int (*cmp)(int))
 {
-if (*s == '\0')
-return (0);
-else
-return (1 + _strlen_recursion(s + 1));
+	int i;
+
+	int count;
+
+	if (array != NULL && cmp != NULL)
+	{
+		i = 1;
+		while (i <= size)
+		{
+			count = cmp(array[i]);
+			if (count != 0)
+			{
+				return (i);
+			}
+			i++;
+		}
+	}
+	return (-1);
 }
